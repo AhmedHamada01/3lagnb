@@ -1,0 +1,59 @@
+name: alagnb_project
+description: A new Flutter project.
+homepage: https://github.com/kaitian6076/flutter-verify-code-input
+
+
+publish_to: 'none' 
+
+
+
+
+
+
+
+
+
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+
+
+
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hexcolor: ^2.0.3
+  localize_and_translate: ^4.1.1
+  print_color: ^3.0.5
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_native_splash: ^2.2.9
+  flutter_svg: ^1.1.6
+  google_nav_bar: ^5.0.6
+  dotted_border: ^2.0.0+3
+  fluttertoast: ^8.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  http:
+  
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/Art/undraw_completing_re_i7ap.svg
+    - assets/Art/forgotpassword.png
+    - assets/Art/
+    - assets/Icons/
+    - assets/
