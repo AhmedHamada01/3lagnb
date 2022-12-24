@@ -1,31 +1,31 @@
+
+
 import 'package:alagnb_project/splash/splash_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class splashScreen1 extends StatefulWidget {
-  const splashScreen1({Key? key}) : super(key: key);
+class SplashScreen1 extends StatelessWidget {
 
-  @override
-  State<splashScreen1> createState() => _splashScreen1State();
-}
 
-class _splashScreen1State extends State<splashScreen1> {
   @override
   Widget build(BuildContext context) {
-
+    Future.delayed(Duration(seconds: 4),(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen2()));
+    });
     return Scaffold(
-
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-        ),
-        child: Image.asset(
-          'assets/mainsquare.png',
-          fit: BoxFit.cover,
-        ),
-
-      ),
+        resizeToAvoidBottomInset : false,
+        body: Column(
+            mainAxisAlignment:MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.asset(
+                'assets/mainsquare.png',
+                width: double.infinity,
+                height: 732.0,
+                fit: BoxFit.cover,
+              ),
+            ]
+        )
     );
-
   }
-
 }

@@ -11,46 +11,6 @@ class TrainTimes2 extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        bottomNavigationBar:
-        Container(
-          color: Colors.white70,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 20.0),
-            child: const  GNav(
-              gap: 0,
-              activeColor: Colors.white,
-              backgroundColor: Colors.white70,
-              color: Colors.black,
-              tabBackgroundColor: Colors.blue,
-              textStyle: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.all(22),
-              tabs: const [
-                GButton(
-                  icon:Icons.home ,
-                  text: 'الرئيسيه',
-                ),
-                GButton(
-                  icon: Icons.menu,
-                  text: 'خدمات المترو',
-
-                ),
-                GButton(
-                  icon: Icons.train,
-                  text: 'القطارات',
-                ),
-                GButton(
-                  icon: Icons.person,
-                  text: 'Hamada',
-                ),
-              ],
-            ),
-          ),
-        ),
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 5.0,
@@ -78,11 +38,33 @@ class TrainTimes2 extends StatelessWidget {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 10.0),
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
+                  InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      width: 50.0,
+                      height: 30.0,
+                      margin: EdgeInsets.only(top: 30.0,left: 260.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.blue,
+                      ),
+                      child: Icon(
+                        Icons.arrow_back_outlined,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
                   Text(
                     'ثمن التذكره',
                     style: TextStyle(

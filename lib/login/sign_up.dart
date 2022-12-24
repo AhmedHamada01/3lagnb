@@ -6,6 +6,7 @@ import '../confirm_mail/confirm_mail.dart';
 
 class SignUp extends StatelessWidget {
 
+  var Formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -22,227 +23,302 @@ class SignUp extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 70.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                 SvgPicture.asset('assets/logo - Copy.svg',
-                  color: Colors.white,
-                  height: 80.0,
-                  width: 80.0,
-                ),
-                 SizedBox(
-                   height: 20.0,
-                 ),
-                 Text(
-                  'إنشاء حساب جديد',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                     border: Border(bottom:BorderSide(
-                         width: 2.0,
-                         color: Colors.white70
-                     )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
+            child: Form(
+              key: Formkey,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                     SvgPicture.asset('assets/logo - Copy.svg',
+                      color: Colors.white,
+                      height: 80.0,
+                      width: 80.0,
                     ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'الأسم',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-                  ),
-
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                     border: Border(bottom:BorderSide(
-                         width: 2.0,
-                         color: Colors.white70
-                     )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'البريد الالكترونى',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-                  ),
-
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                     border: Border(bottom:BorderSide(
-                         width: 2.0,
-                         color: Colors.white70
-                     )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'اسم المستخدم',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-                  ),
-
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                     border: Border(bottom:BorderSide(
-                         width: 2.0,
-                         color: Colors.white70
-                     )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'كلمه المرور ',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-                  ),
-
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                     border: Border(bottom:BorderSide(
-                         width: 2.0,
-                         color: Colors.white70
-                     )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'تأكيد كلمه المرور',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-                  ),
-
-                ),
-                 Container(
-                   decoration: BoxDecoration(
-                       border: Border(bottom:BorderSide(
-                           width: 2.0,
-                           color: Colors.white70
-                       )),
-                     color: Colors.transparent,
-                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.white
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'رقم الهاتف',
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.white70,
-                      ),
-                    ),
-                    onChanged: (String value){},
-
-                  ),
-
-                ),
-                 SizedBox(
-                   height: 40.0,
-                 ),
-                 Container(
-                  width: 10.0,
-                  height: 40.0,
-                  child: FloatingActionButton.extended(
-                    label: Text('إنشاء حساب'), // <-- Text
-                    backgroundColor: Colors.blueAccent,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmMail()));
-                    },
-                  ),
-                ),
-                 SizedBox(
-                   height: 9.0,
-                 ),
-                 Row(
-                   children: [
+                     SizedBox(
+                       height: 20.0,
+                     ),
                      Text(
-                      'بضغكط على إنشاء الحساب . انت توافق على',
+                      'إنشاء حساب جديد',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
                         color: Colors.white,
                       ),
-                ),
-                     TextButton(onPressed: (){},
-                     child:
-                        Text(
-                       'الشروط و السياسات',
-                       style: TextStyle(
-                         fontSize: 13.0,
-                         color: Colors.white,
-                         fontWeight: FontWeight.bold,
-
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border(bottom:BorderSide(
+                             width: 2.0,
+                             color: Colors.white70
+                         )),
+                         color: Colors.transparent,
                        ),
-                     )
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.name,
+                        decoration: InputDecoration(
+                          labelText: 'الأسم',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'الاسم فارغ' ;
+                            }
+                            return null ;
+                          }
+                      ),
+
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border(bottom:BorderSide(
+                             width: 2.0,
+                             color: Colors.white70
+                         )),
+                         color: Colors.transparent,
+                       ),
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'البريد الالكترونى',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'البريد الالكترونى فارغ' ;
+                            }
+                            if (value == null || !value.contains("@")){
+                              return 'البريد الالكترونى يجب ان يحتوى على  @';
+                            }
+                            if(value == null || !value.contains(".com")){
+                              return 'البريد الالكترونى يجب ان يحتوى على .com';
+                            }
+                            return null ;
+                          }
+                      ),
+
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border(bottom:BorderSide(
+                             width: 2.0,
+                             color: Colors.white70
+                         )),
+                         color: Colors.transparent,
+                       ),
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'اسم المستخدم',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'الاسم فارغ' ;
+                            }
+                            return null ;
+                          }
+                      ),
+
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border(bottom:BorderSide(
+                             width: 2.0,
+                             color: Colors.white70
+                         )),
+                         color: Colors.transparent,
+                       ),
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          labelText: 'كلمه المرور ',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'كلمه المرور فارغه' ;
+                            }
+                            if (value!.length < 5){
+                              return 'كلمه المرور قصيره';
+                            }
+                            return null ;
+                          }
+                      ),
+
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                         border: Border(bottom:BorderSide(
+                             width: 2.0,
+                             color: Colors.white70
+                         )),
+                         color: Colors.transparent,
+                       ),
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          labelText: 'تأكيد كلمه المرور',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'كلمه المرور فارغه' ;
+                            }
+                            if (value!.length < 5){
+                              return 'كلمه المرور قصيره';
+                            }
+                            return null ;
+                          }
+                      ),
+
+                    ),
+                     Container(
+                       decoration: BoxDecoration(
+                           border: Border(bottom:BorderSide(
+                               width: 2.0,
+                               color: Colors.white70
+                           )),
+                         color: Colors.transparent,
+                       ),
+                      child: TextFormField(
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'رقم الهاتف',
+                          counterStyle: TextStyle(
+                              color: Colors.white
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'رقم الهاتف فارغ' ;
+                            }
+                            if (value!.length < 10 ){
+                              return 'رقم الهاتف غير صحيح';
+                            }
+                            if (value.length > 11 ){
+                              return 'رقم الهاتف غير صحيح';
+                            }
+                            return null ;
+                          }
+
+                      ),
+
+                    ),
+                     SizedBox(
+                       height: 40.0,
                      ),
-                   ],
-                 ),
-              ],
+                     Container(
+                      width: 10.0,
+                      height: 40.0,
+                      child: FloatingActionButton.extended(
+                        label: Text('إنشاء حساب'), // <-- Text
+                        backgroundColor: Colors.blueAccent,
+                        onPressed: () {
+                          if(Formkey.currentState!.validate()){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ConfirmMail()));
+
+                          }
+                        },
+                      ),
+                    ),
+                     SizedBox(
+                       height: 9.0,
+                     ),
+                     Row(
+                       children: [
+                         Text(
+                          'بضغكط على إنشاء الحساب . انت توافق على',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                    ),
+                         TextButton(onPressed: (){},
+                         child:
+                            Text(
+                           'الشروط و السياسات',
+                           style: TextStyle(
+                             fontSize: 13.0,
+                             color: Colors.white,
+                             fontWeight: FontWeight.bold,
+
+                           ),
+                         )
+                         ),
+                       ],
+                     ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

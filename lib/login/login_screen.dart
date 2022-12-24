@@ -8,10 +8,18 @@ import 'package:hexcolor/hexcolor.dart';
 import '../componants/componants.dart';
 import '../home/home_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   var emailcontroller = TextEditingController();
 
   var passwordcontroller = TextEditingController();
+
+  var Formkey = GlobalKey<FormState>();
+  String mark = '\@' ;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +36,12 @@ class LoginScreen extends StatelessWidget {
               colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
             ),
           ),
-          child: Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.only(left:35.0,right: 35.0,top: 130.0),
-              child:
-                 Column(
+          child: Padding(
+            padding: const EdgeInsets.only(left:35.0,right: 35.0,top: 130.0),
+            child:
+               Form(
+                 key:Formkey ,
+                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.start,
 
@@ -78,6 +86,20 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'البريد الالكترونى فارغ' ;
+                            }
+                            if (value == null || !value.contains("@")){
+                              return 'البريد الالكترونى يجب ان يحتوى على  @';
+                            }
+                            if(value == null || !value.contains(".com")){
+                              return 'البريد الالكترونى يجب ان يحتوى على .com';
+                            }
+                            return null ;
+                          }
                       ),
 
                     ),
@@ -93,6 +115,9 @@ class LoginScreen extends StatelessWidget {
                         color: Colors.transparent,
                       ),
                       child: TextFormField(
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                         cursorColor: Colors.white,
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
@@ -102,6 +127,17 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         onChanged: (String value){},
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'كلمه المرور فارغه' ;
+                            }
+                            if (value!.length < 5){
+                              return 'كلمه المرور قصيره';
+                            }
+                            return null ;
+                          }
                       ),
                     ),
                     SizedBox(
@@ -114,12 +150,15 @@ class LoginScreen extends StatelessWidget {
                         label: Text('دخول'), // <-- Text
                         backgroundColor: Colors.blueAccent,
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                          if(Formkey.currentState!.validate()){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+
+                          }
                         },
                       ),
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 10.0,
                     ),
                     InkWell(
                       onTap: (){
@@ -139,7 +178,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 5.0,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -167,9 +206,9 @@ class LoginScreen extends StatelessWidget {
                       ],
                     ),
                   ],
-                ),
+              ),
+               ),
           ),
-        ),
       ),
     ),
     );

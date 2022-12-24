@@ -27,6 +27,7 @@ class SplashScreen2 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
+                //HexColor('#4267B2'),
                 SvgPicture.asset('assets/logo - Copy.svg',
                 color: Colors.white,
                   height: 100.0,
@@ -75,17 +76,16 @@ class SplashScreen2 extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   height: 40.0,
-                  //
                   child: FloatingActionButton.extended(
                     label: Text('Google',
                       style: TextStyle(
-                          color: Colors.black
-                      ),), // <-- Text
+                          color: Colors.black,
+                      ),),
                     backgroundColor: Colors.white,
-                    icon: Icon( // <-- Icon
-                      Icons.g_mobiledata_sharp,
-                      color: Colors.black,
-                      size: 24.0,
+                    icon: SvgPicture.asset(
+                      'assets/Icons/google.svg',
+                      width: 24.0,
+                      height: 24.0,
                     ),
                     onPressed: () {},
                   ),

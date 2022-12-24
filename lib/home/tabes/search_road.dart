@@ -21,50 +21,6 @@ class _SearchRoadState extends State<SearchRoad> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        bottomNavigationBar:
-        Container(
-          color: Colors.white70,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 20.0),
-            child:   GNav(
-              gap: 0,
-              activeColor: Colors.white,
-              backgroundColor: Colors.white70,
-              color: Colors.black,
-              tabBackgroundColor: Colors.blue,
-              textStyle: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.all(22),
-              tabs:  [
-                GButton(
-                  icon:Icons.home ,
-                  text: 'الرئيسيه',
-                ),
-                GButton(
-                  onPressed: (index){
-                   Navigator.pop(context);
-                  // HomeScreen().
-                  },
-                  icon: Icons.menu,
-                  text: 'خدمات المترو',
-
-                ),
-                GButton(
-                  icon: Icons.train,
-                  text: 'القطارات',
-                ),
-                GButton(
-                  icon: Icons.person,
-                  text: 'Hamada',
-                ),
-              ],
-            ),
-          ),
-        ),
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 5.0,
@@ -92,9 +48,31 @@ class _SearchRoadState extends State<SearchRoad> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.only(left: 25.0 , right: 25.0 , top: 60.0),
+            padding: const EdgeInsets.only(left: 25.0 , right: 25.0 ),
             child: Column(
               children: [
+                InkWell(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: 50.0,
+                    height: 30.0,
+                    margin: EdgeInsets.only(top: 30.0,left: 260.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.blue,
+                    ),
+                    child: Icon(
+                      Icons.arrow_back_outlined,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
                 Text(
                   'أبحث عن طريق',
                   style: TextStyle(

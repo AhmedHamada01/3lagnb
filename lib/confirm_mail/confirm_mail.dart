@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../walk_through/walk_through.dart';
 
 class ConfirmMail extends StatelessWidget {
+  var Formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -49,99 +50,134 @@ class ConfirmMail extends StatelessWidget {
                 height: 30.0,
               ),
               // Row دا بتاع الكود اللى هيجي علشان تدخله
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 68,
-                    width: 64,
-                    child: TextFormField(
-                      onChanged: (value){
-                        if(value.length==1){
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      onSaved: (pin1){},
-                      style: Theme.of(context).textTheme.headline6,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
+              Form(
+                key: Formkey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 68,
+                      width: 64,
+                      child: TextFormField(
+                        onChanged: (value){
+                          if(value.length==1){
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                          validator: (value)
+                          {
+                            if(value?.isEmpty ?? true )
+                            {
+                              return 'برجاء ادخال الرمز' ;
+                            }
+                            return null ;
+                          },
+                        onSaved: (pin1){},
+                        style: Theme.of(context).textTheme.headline6,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  SizedBox(
-                    height: 68,
-                    width: 64,
-                    child: TextFormField(
-                      onChanged: (value){
-                        if(value.length==1){
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      onSaved: (pin2){},
-                      style: Theme.of(context).textTheme.headline6,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
+                    SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  SizedBox(
-                    height: 68,
-                    width: 64,
-                    child: TextFormField(
-                      onChanged: (value){
-                        if(value.length==1){
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      onSaved: (pin3){},
-                      style: Theme.of(context).textTheme.headline6,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
+                    SizedBox(
+                      height: 68,
+                      width: 64,
+                      child: TextFormField(
+                        onChanged: (value){
+                          if(value.length==1){
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        validator: (value)
+                        {
+                          if(value?.isEmpty ?? true )
+                          {
+                            return 'برجاء ادخال الرمز' ;
+                          }
+                          return null ;
+                        },
+                        onSaved: (pin2){},
+                        style: Theme.of(context).textTheme.headline6,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  SizedBox(
-                    height: 68,
-                    width: 64,
-                    child: TextFormField(
-                      onChanged: (value){
-                        if(value.length==1){
-                          FocusScope.of(context).nextFocus();
-                        }
-                      },
-                      onSaved: (pin4){},
-                      style: Theme.of(context).textTheme.headline6,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
+                    SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
+                    SizedBox(
+                      height: 68,
+                      width: 64,
+                      child: TextFormField(
+                        onChanged: (value){
+                          if(value.length==1){
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        validator: (value)
+                        {
+                          if(value?.isEmpty ?? true )
+                          {
+                            return 'برجاء ادخال الرمز' ;
+                          }
+                          return null ;
+                        },
+                        onSaved: (pin3){},
+                        style: Theme.of(context).textTheme.headline6,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    SizedBox(
+                      height: 68,
+                      width: 64,
+                      child: TextFormField(
+                        onChanged: (value){
+                          if(value.length==1){
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        validator: (value)
+                        {
+                          if(value?.isEmpty ?? true )
+                          {
+                            return 'برجاء ادخال الرمز' ;
+                          }
+                          return null ;
+                        },
+                        onSaved: (pin4){},
+                        style: Theme.of(context).textTheme.headline6,
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
 
-                ],
+                  ],
+                ),
               ),
               //
               Container(
@@ -149,7 +185,9 @@ class ConfirmMail extends StatelessWidget {
                 padding: EdgeInsets.only(top: 40.0,left: 50,right: 50),
                 child: FloatingActionButton.extended(
                   onPressed:(){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>WalkThrough()));
+                    if(Formkey.currentState!.validate()){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>WalkThrough()));
+                    }
                   },
                   label:Text('تأكيد') ,
                   backgroundColor: Colors.blueAccent,),

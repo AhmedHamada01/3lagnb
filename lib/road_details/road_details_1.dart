@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:dotted_line/dotted_line.dart';
 
 class RoadDetails1 extends StatelessWidget {
   const RoadDetails1({Key? key}) : super(key: key);
@@ -12,46 +13,6 @@ class RoadDetails1 extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        bottomNavigationBar:
-        Container(
-          color: Colors.white70,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 20.0),
-            child: const  GNav(
-              gap: 0,
-              activeColor: Colors.white,
-              backgroundColor: Colors.white70,
-              color: Colors.black,
-              tabBackgroundColor: Colors.blue,
-              textStyle: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.all(22),
-              tabs: const [
-                GButton(
-                  icon:Icons.home ,
-                  text: 'الرئيسيه',
-                ),
-                GButton(
-                  icon: Icons.menu,
-                  text: 'خدمات المترو',
-
-                ),
-                GButton(
-                  icon: Icons.train,
-                  text: 'القطارات',
-                ),
-                GButton(
-                  icon: Icons.person,
-                  text: 'Hamada',
-                ),
-              ],
-            ),
-          ),
-        ),
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 5.0,
@@ -78,9 +39,39 @@ class RoadDetails1 extends StatelessWidget {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 40.0,right: 20.0,left: 40.0),
+          padding: const EdgeInsets.only(right: 20.0,left: 40.0),
           child: Column(
             children: [
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  width: 50.0,
+                  height: 30.0,
+                  margin: EdgeInsets.only(top: 30.0,left: 260.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    color: Colors.blue,
+                  ),
+                  child: Icon(
+                    Icons.arrow_back_outlined,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Text(
+                'من نحن ',
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
               Text(
                 'مواصلات روكسى من محطه مترو الملك الصالح ',
                 style: TextStyle(
@@ -96,6 +87,7 @@ class RoadDetails1 extends StatelessWidget {
                 width: double.infinity,
                 height: 45.0,
                 decoration: BoxDecoration(
+
                   borderRadius: BorderRadius.circular(10.0),
                   border: Border.all(
                     color: Colors.blue,
@@ -103,6 +95,7 @@ class RoadDetails1 extends StatelessWidget {
                   ),
                   color: Colors.white70
                 ),
+
                 child: Row(
                   children: [
                     SizedBox(
@@ -112,6 +105,16 @@ class RoadDetails1 extends StatelessWidget {
                       'assets/Mask Group 9.png',
                       width: 30.0,
                       height: 30.0,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      'اركب مترو حلوان - المرج و انزل عند محطه مترو سراي القبه',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.bold
+                      ),
                     ),
                   ],
                 ),
@@ -140,6 +143,17 @@ class RoadDetails1 extends StatelessWidget {
                       width: 30.0,
                       height: 30.0,
                     ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      'اركب ميكروباص عبود - روكسي و انزل عند روكسى',
+                      style: TextStyle(
+                          fontSize: 10.0,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+
                   ],
                 ),
               ),
@@ -147,7 +161,7 @@ class RoadDetails1 extends StatelessWidget {
                 height: 25.0,
               ),
               SvgPicture.asset(
-                'assets/Icons/distance.svg',
+                'assets/Icons/road.svg',
                 width: 40.0,
                 height: 40.0,
 
@@ -176,6 +190,16 @@ class RoadDetails1 extends StatelessWidget {
                       width: 30.0,
                       height: 30.0,
                     ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      'اركب مترو حلوان - المرج و انزل عند محطه مترو حلميه الزيتون',
+                      style: TextStyle(
+                          fontSize: 9.0,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -202,6 +226,16 @@ class RoadDetails1 extends StatelessWidget {
                       'assets/Icons/van.svg',
                       width: 30.0,
                       height: 30.0,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      'اركب ميكروباص المطريه - روكسي - الطيران و انزل عند روكسى',
+                      style: TextStyle(
+                          fontSize: 9.0,
+                          fontWeight: FontWeight.bold
+                      ),
                     ),
                   ],
                 ),
