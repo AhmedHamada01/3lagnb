@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 GButton(
                   icon: Icons.person,
-                  text: 'Hamada',
+                  text: 'الملف الشخصى',
                 ),
               ],
             ),

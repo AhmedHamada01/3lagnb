@@ -14,6 +14,7 @@ class RoadDetails2 extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 5.0,
           actions: [
             Padding(
