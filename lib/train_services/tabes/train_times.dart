@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class TrainTimes extends StatelessWidget {
-  const TrainTimes({Key? key}) : super(key: key);
+class TrainTimes extends StatefulWidget {
 
+
+  @override
+  State<TrainTimes> createState() => _TrainTimesState();
+}
+
+class _TrainTimesState extends State<TrainTimes> {
+
+  static final List<String> items = <String>[
+    'الاولى ',
+    ' الثانيه ',
+    'الثالثه',
+  ];
+  String value  = items.first;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -154,49 +166,8 @@ class TrainTimes extends StatelessWidget {
                     height: 10.0,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 25.0 , right: 30.0 ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 270.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black26,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.blue[50],
-                          ),
-                          child: TextFormField(
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold
-                            ),
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.only(right: 10,top: 10.0),
-                              hintText: 'الدرجه ' ,
-                              counterStyle: TextStyle(
-                                color: Colors.white,
-
-                              ),
-                              hintStyle: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 13.0,
-                              ),
-                              suffixIcon:Icon(
-                                Icons.keyboard_arrow_down_sharp,
-                                color: Colors.black,
-                                size: 30.0,
-                              ) ,
-                            ),
-                            onChanged: (String value){},
-                          ),
-
-                        ),
-
-                      ],
-                    ),
+                    padding: const EdgeInsets.only(left: 23.0),
+                    child: BuildDropdown(),
                   ),
                   SizedBox(
                     height: 25.0,
@@ -249,4 +220,44 @@ class TrainTimes extends StatelessWidget {
       ),
     );
   }
+  Widget BuildDropdown()=> Container(
+    width: 270.0,
+    decoration: BoxDecoration(
+      border: Border.all(
+        color: Colors.black26,
+        width: 1.0,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+      color: Colors.blue[50],
+    ),
+
+    child: DropdownButtonHideUnderline(
+      child:DropdownButton<String>(
+        isExpanded: true,
+        hint: Expanded(
+          child: Text(
+            'من - محطه',
+          ),
+        ),
+        value: value,
+        items : items.map((items)=>DropdownMenuItem<String>(
+          child:Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: Text(
+              items,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 17.0,
+              ),
+            ),
+          ),
+          value: items,
+
+        ) ).toList(),
+        onChanged: (value)=>setState(() {
+          this.value= value! ;
+        }),
+      ),
+    ),
+  );
 }

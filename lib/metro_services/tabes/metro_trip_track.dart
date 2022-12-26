@@ -1,12 +1,18 @@
+import 'package:alagnb_project/dropdown_menu/dropdown_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-class MetroTripTrack extends StatelessWidget {
+class MetroTripTrack extends StatefulWidget {
   const MetroTripTrack({Key? key}) : super(key: key);
 
+  @override
+  State<MetroTripTrack> createState() => _MetroTripTrackState();
+}
+
+class _MetroTripTrackState extends State<MetroTripTrack> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -80,43 +86,7 @@ class MetroTripTrack extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 25.0 , right: 20.0 ),
                   child: Row(
                     children: [
-                      Container(
-                        width: 240.0,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.blue[50],
-                        ),
-                        child: TextFormField(
-
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(right: 10,top: 10.0),
-                            hintText: 'من - محطه البدايه (المرج الجديده)' ,
-                            counterStyle: TextStyle(
-                                color: Colors.white,
-
-                            ),
-                            hintStyle: TextStyle(
-                              color: Colors.black54,
-                              fontSize: 11.0
-                            ),
-                            suffixIcon:Icon(
-                                Icons.keyboard_arrow_down_sharp,
-                              color: Colors.black,
-                              size: 30.0,
-                            ) ,
-                          ),
-                          onChanged: (String value){},
-                        ),
-                      ),
+                      DropDown(),
                       SizedBox(
                         width: 10.0,
                       ),
@@ -136,44 +106,7 @@ class MetroTripTrack extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 25.0 , right: 20.0 ),
                   child: Row(
                     children: [
-                      Container(
-                        width: 240.0,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.blue[50],
-                        ),
-                        child: TextFormField(
-
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(right: 10,top: 10.0),
-                            hintText: 'إلى محطه الوصول (سانت تريزا)' ,
-                            counterStyle: TextStyle(
-                              color: Colors.white,
-
-                            ),
-                            hintStyle: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 11.0
-                            ),
-                            suffixIcon:Icon(
-                              Icons.keyboard_arrow_down_sharp,
-                              color: Colors.black,
-                              size: 30.0,
-                            ) ,
-                          ),
-                          onChanged: (String value){},
-                        ),
-
-                      ),
+                      DropDown(),
                       SizedBox(
                         width: 10.0,
                       ),

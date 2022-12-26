@@ -1,3 +1,4 @@
+import 'package:alagnb_project/dropdown_menu/dropdown_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -83,99 +84,15 @@ class _MetroTicketCalculationState extends State<MetroTicketCalculation> {
                   height: 10.0,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25.0 , right: 30.0 ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 270.0,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.blue[50],
-                        ),
-                        child: TextFormField(
-
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(right: 10,top: 10.0),
-                            hintText: 'من - محطه البدايه ' ,
-                            counterStyle: TextStyle(
-                              color: Colors.white,
-
-                            ),
-                            hintStyle: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 11.0
-                            ),
-                            suffixIcon:Icon(
-                              Icons.keyboard_arrow_down_sharp,
-                              color: Colors.black,
-                              size: 30.0,
-                            ) ,
-                          ),
-                          onChanged: (String value){},
-                        ),
-
-                      ),
-
-                    ],
-                  ),
+                  padding: const EdgeInsets.only(left: 50.0),
+                  child: DropDown(),
                 ),
                 SizedBox(
                   height: 15.0,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25.0 , right: 30.0 ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 270.0,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.blue[50],
-                        ),
-                        child: TextFormField(
-
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(right: 10,top: 10.0),
-                            hintText: 'من - محطه البدايه ' ,
-                            counterStyle: TextStyle(
-                              color: Colors.white,
-
-                            ),
-                            hintStyle: TextStyle(
-                                color: Colors.black54,
-                                fontSize: 11.0
-                            ),
-                            suffixIcon:Icon(
-                              Icons.keyboard_arrow_down_sharp,
-                              color: Colors.black,
-                              size: 30.0,
-                            ) ,
-                          ),
-                          onChanged: (String value){},
-                        ),
-
-                      ),
-
-                    ],
-                  ),
+                  padding: const EdgeInsets.only(left: 50.0),
+                  child: DropDown(),
                 ),
                 SizedBox(
                   height: 25.0,
