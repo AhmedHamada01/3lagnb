@@ -69,7 +69,6 @@ class SplashScreen2 extends StatelessWidget {
                     onPressed: () {},
                   ),
                 ),
-
                 SizedBox(
                   height: 20.0,
                 ),

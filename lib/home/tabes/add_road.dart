@@ -89,68 +89,114 @@ class AddRoad1 extends StatelessWidget {
                 SizedBox(
                   height: 25.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.blue[50],
-                  ),
-                  child: TextFormField(
+                TextFormField(
                     style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
                     ),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue[50],
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide:BorderSide(
+                            color: Colors.black26,
+                            width: 1.0
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide:BorderSide(
+                            color: Colors.black26,
+                            width: 1.0
+                        ),
+                      ),
+                      errorBorder:OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                        ),
+                      ),
+                      focusedErrorBorder:OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                        ),
+                      ),
                       contentPadding: EdgeInsets.only(right: 10),
                       hintText: 'من - المكان اللى هتتحرك منه ' ,
-                      counterStyle: TextStyle(
-                          color: Colors.white
-                      ),
                       hintStyle: TextStyle(
                         color: Colors.black54,
                       ),
                     ),
                     onChanged: (String value){},
-                  ),
-
+                    validator: (value)
+                    {
+                      if(value?.isEmpty ?? true )
+                      {
+                        return 'اسم المنطقه لا يجب ان يكون فارغا' ;
+                      }
+                      return null ;
+                    }
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.blue[50],
-                  ),
-                  child: TextFormField(
+                TextFormField(
                     style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
                     ),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                      filled: true,
+                      fillColor: Colors.blue[50],
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide:BorderSide(
+                            color: Colors.black26,
+                            width: 1.0
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide:BorderSide(
+                            color: Colors.black26,
+                            width: 1.0
+                        ),
+                      ),
+                      errorBorder:OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                        ),
+                      ),
+                      focusedErrorBorder:OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                        ),
+                      ),
                       contentPadding: EdgeInsets.only(right: 10),
                       hintText: 'إلى - المكان اللى هتوصل له ' ,
-                      counterStyle: TextStyle(
-                          color: Colors.white,
-                      ),
                       hintStyle: TextStyle(
                         color: Colors.black54,
-                          fontWeight: FontWeight.w500
                       ),
                     ),
                     onChanged: (String value){},
-                  ),
-
+                    validator: (value)
+                    {
+                      if(value?.isEmpty ?? true )
+                      {
+                        return 'اسم المنطقه لا يجب ان يكون فارغا' ;
+                      }
+                      return null ;
+                    }
                 ),
                 SizedBox(
                   height: 40.0,

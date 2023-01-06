@@ -63,82 +63,116 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border(bottom:BorderSide(
-                            width: 2.0,
-                            color: Colors.white70
-                        )),
-                        color: Colors.transparent,
+                    TextFormField(
+                      style: TextStyle(
+                        color: Colors.white
                       ),
-                      child: TextFormField(
-                        style: TextStyle(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide:BorderSide(
+                            color: Colors.white70,
+                            width: 1.0
+                          ),
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide:BorderSide(
+                              color: Colors.white70,
+                              width: 1.0
+                          ),
+                        ),
+                        errorBorder:UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                          ),
+                        ),
+                        focusedErrorBorder:UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 1.0
+                          ),
+                        ),
+                        labelText: 'البريد الالكترونى',
+                        counterStyle: TextStyle(
                           color: Colors.white
                         ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: 'البريد الالكترونى',
-                          counterStyle: TextStyle(
-                            color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
+                        labelStyle: TextStyle(
+                          color: Colors.white70,
                         ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'البريد الالكترونى فارغ' ;
-                            }
-                            if (value == null || !value.contains("@")){
-                              return 'البريد الالكترونى يجب ان يحتوى على  @';
-                            }
-                            if(value == null || !value.contains(".com")){
-                              return 'البريد الالكترونى يجب ان يحتوى على .com';
-                            }
-                            return null ;
-                          }
                       ),
-
+                      onChanged: (String value){},
+                        validator: (value)
+                        {
+                          if(value?.isEmpty ?? true )
+                          {
+                            return 'البريد الالكترونى فارغ' ;
+                          }
+                          if (value == null || !value.contains("@")){
+                            return 'البريد الالكترونى يجب ان يحتوى على  @';
+                          }
+                          if(value == null || !value.contains(".com")){
+                            return 'البريد الالكترونى يجب ان يحتوى على .com';
+                          }
+                          return null ;
+                        }
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border(bottom:BorderSide(
-                            width: 2.0,
-                            color: Colors.white70
-                        )),
-                        color: Colors.transparent,
+                    TextFormField(
+                      obscureText: true,
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
-                      child: TextFormField(
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        cursorColor: Colors.white,
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                          labelText: 'كلمه المرور',
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
+                      cursorColor: Colors.white,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide:BorderSide(
+                              color: Colors.white70,
+                              width: 1.0
                           ),
                         ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'كلمه المرور فارغه' ;
-                            }
-                            if (value!.length < 5){
-                              return 'كلمه المرور قصيره';
-                            }
-                            return null ;
-                          }
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide:BorderSide(
+                              color: Colors.white70,
+                              width: 1.0
+                          ),
+                        ),
+                        errorBorder:UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 1.0
+                          ),
+                        ),
+                        focusedErrorBorder:UnderlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 1.0
+                          ),
+                        ),
+                        labelText: 'كلمه المرور',
+                        labelStyle: TextStyle(
+                          color: Colors.white70,
+                        ),
                       ),
+                      onChanged: (String value){},
+                        validator: (value)
+                        {
+                          if(value?.isEmpty ?? true )
+                          {
+                            return 'كلمه المرور فارغه' ;
+                          }
+                          if (value!.length < 5){
+                            return 'كلمه المرور قصيره';
+                          }
+                          return null ;
+                        }
                     ),
                     SizedBox(
                       height: 40.0,

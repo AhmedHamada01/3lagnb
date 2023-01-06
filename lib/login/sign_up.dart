@@ -22,7 +22,7 @@ class SignUp extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 70.0),
+            padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 100.0),
             child: Form(
               key: Formkey,
               child: SingleChildScrollView(
@@ -48,229 +48,327 @@ class SignUp extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border(bottom:BorderSide(
-                             width: 2.0,
-                             color: Colors.white70
-                         )),
-                         color: Colors.transparent,
+                     TextFormField(
+                       style: TextStyle(
+                           color: Colors.white
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.name,
-                        decoration: InputDecoration(
-                          labelText: 'الأسم',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'الاسم فارغ' ;
-                            }
-                            return null ;
-                          }
-                      ),
-
-                    ),
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border(bottom:BorderSide(
-                             width: 2.0,
-                             color: Colors.white70
-                         )),
-                         color: Colors.transparent,
+                       keyboardType: TextInputType.name,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'الأسم',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: 'البريد الالكترونى',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'البريد الالكترونى فارغ' ;
-                            }
-                            if (value == null || !value.contains("@")){
-                              return 'البريد الالكترونى يجب ان يحتوى على  @';
-                            }
-                            if(value == null || !value.contains(".com")){
-                              return 'البريد الالكترونى يجب ان يحتوى على .com';
-                            }
-                            return null ;
-                          }
-                      ),
-
-                    ),
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border(bottom:BorderSide(
-                             width: 2.0,
-                             color: Colors.white70
-                         )),
-                         color: Colors.transparent,
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'الاسم فارغ' ;
+                           }
+                           return null ;
+                         }
+                     ),
+                     TextFormField(
+                       style: TextStyle(
+                           color: Colors.white
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: 'اسم المستخدم',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'الاسم فارغ' ;
-                            }
-                            return null ;
-                          }
-                      ),
-
-                    ),
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border(bottom:BorderSide(
-                             width: 2.0,
-                             color: Colors.white70
-                         )),
-                         color: Colors.transparent,
+                       keyboardType: TextInputType.emailAddress,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'البريد الالكترونى',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                          labelText: 'كلمه المرور ',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'كلمه المرور فارغه' ;
-                            }
-                            if (value!.length < 5){
-                              return 'كلمه المرور قصيره';
-                            }
-                            return null ;
-                          }
-                      ),
-
-                    ),
-                     Container(
-                       decoration: BoxDecoration(
-                         border: Border(bottom:BorderSide(
-                             width: 2.0,
-                             color: Colors.white70
-                         )),
-                         color: Colors.transparent,
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'البريد الالكترونى فارغ' ;
+                           }
+                           if (value == null || !value.contains("@")){
+                             return 'البريد الالكترونى يجب ان يحتوى على  @';
+                           }
+                           if(value == null || !value.contains(".com")){
+                             return 'البريد الالكترونى يجب ان يحتوى على .com';
+                           }
+                           return null ;
+                         }
+                     ),
+                     TextFormField(
+                       style: TextStyle(
+                           color: Colors.white
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                          labelText: 'تأكيد كلمه المرور',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'كلمه المرور فارغه' ;
-                            }
-                            if (value!.length < 5){
-                              return 'كلمه المرور قصيره';
-                            }
-                            return null ;
-                          }
-                      ),
-
-                    ),
-                     Container(
-                       decoration: BoxDecoration(
-                           border: Border(bottom:BorderSide(
-                               width: 2.0,
-                               color: Colors.white70
-                           )),
-                         color: Colors.transparent,
+                       keyboardType: TextInputType.emailAddress,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'اسم المستخدم',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
                        ),
-                      child: TextFormField(
-                        style: TextStyle(
-                            color: Colors.white
-                        ),
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'رقم الهاتف',
-                          counterStyle: TextStyle(
-                              color: Colors.white
-                          ),
-                          labelStyle: TextStyle(
-                            color: Colors.white70,
-                          ),
-                        ),
-                        onChanged: (String value){},
-                          validator: (value)
-                          {
-                            if(value?.isEmpty ?? true )
-                            {
-                              return 'رقم الهاتف فارغ' ;
-                            }
-                            if (value!.length < 10 ){
-                              return 'رقم الهاتف غير صحيح';
-                            }
-                            if (value.length > 11 ){
-                              return 'رقم الهاتف غير صحيح';
-                            }
-                            return null ;
-                          }
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'الاسم فارغ' ;
+                           }
+                           return null ;
+                         }
+                     ),
+                     TextFormField(
+                       obscureText: true,
+                       style: TextStyle(
+                           color: Colors.white
+                       ),
+                       keyboardType: TextInputType.visiblePassword,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'كلمه المرور ',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
+                       ),
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'كلمه المرور فارغه' ;
+                           }
+                           if (value!.length < 5){
+                             return 'كلمه المرور قصيره';
+                           }
+                           return null ;
+                         }
+                     ),
+                     TextFormField(
+                       obscureText: true,
+                       style: TextStyle(
+                           color: Colors.white
+                       ),
+                       keyboardType: TextInputType.visiblePassword,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'تأكيد كلمه المرور',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
+                       ),
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'كلمه المرور فارغه' ;
+                           }
+                           if (value!.length < 5){
+                             return 'كلمه المرور قصيره';
+                           }
+                           return null ;
+                         }
+                     ),
+                     TextFormField(
+                       style: TextStyle(
+                           color: Colors.white
+                       ),
+                       keyboardType: TextInputType.number,
+                       decoration: InputDecoration(
+                         focusedBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         enabledBorder: UnderlineInputBorder(
+                           borderSide:BorderSide(
+                               color: Colors.white70,
+                               width: 1.0
+                           ),
+                         ),
+                         errorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         focusedErrorBorder:UnderlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                           borderSide: BorderSide(
+                               color: Colors.red,
+                               width: 1.0
+                           ),
+                         ),
+                         labelText: 'رقم الهاتف',
+                         counterStyle: TextStyle(
+                             color: Colors.white
+                         ),
+                         labelStyle: TextStyle(
+                           color: Colors.white70,
+                         ),
+                       ),
+                       onChanged: (String value){},
+                         validator: (value)
+                         {
+                           if(value?.isEmpty ?? true )
+                           {
+                             return 'رقم الهاتف فارغ' ;
+                           }
+                           if (value!.length < 10 ){
+                             return 'رقم الهاتف غير صحيح';
+                           }
+                           if (value.length > 11 ){
+                             return 'رقم الهاتف غير صحيح';
+                           }
+                           return null ;
+                         }
 
-                      ),
-
-                    ),
+                     ),
                      SizedBox(
                        height: 40.0,
                      ),

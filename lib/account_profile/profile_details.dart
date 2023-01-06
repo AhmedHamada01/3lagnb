@@ -110,172 +110,188 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                 SizedBox(
                   height: 25.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey[50],
+                TextFormField(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
-                      contentPadding: EdgeInsets.only(right: 10),
-                      labelText: 'البريد الالكترونى ' ,
-                      counterStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
                       ),
                     ),
-                    onChanged: (String value){},
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
+                      ),
+                    ),
+                    //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                    contentPadding: EdgeInsets.only(right: 10),
+                    labelText: 'البريد الالكترونى ' ,
+                    counterStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-
+                  onChanged: (String value){},
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey[50],
+                TextFormField(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
-                      contentPadding: EdgeInsets.only(right: 10),
-                      labelText: 'اسم المستخدم ' ,
-                      counterStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
                       ),
                     ),
-                    onChanged: (String value){},
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
+                      ),
+                    ),
+                    //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                    contentPadding: EdgeInsets.only(right: 10),
+                    labelText: 'اسم المستخدم ' ,
+                    counterStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-
+                  onChanged: (String value){},
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey[50],
+                TextFormField(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
-                      contentPadding: EdgeInsets.only(right: 10),
-                      labelText: 'الاسم ' ,
-                      counterStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
                       ),
                     ),
-                    onChanged: (String value){},
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
+                      ),
+                    ),
+                    //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                    contentPadding: EdgeInsets.only(right: 10),
+                    labelText: 'الاسم ' ,
+                    counterStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-
+                  onChanged: (String value){},
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey[50],
+                TextFormField(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
-                      contentPadding: EdgeInsets.only(right: 10),
-                      labelText: 'رقم الهاتف ' ,
-                      counterStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
                       ),
                     ),
-                    onChanged: (String value){},
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
+                      ),
+                    ),
+                    //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                    contentPadding: EdgeInsets.only(right: 10),
+                    labelText: 'رقم الهاتف ' ,
+                    counterStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-
+                  onChanged: (String value){},
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black26,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.grey[50],
+                TextFormField(
+                  obscureText: true,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
                   ),
-                  child: TextFormField(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold
-                    ),
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                      //دا علشان الكلمه متبقاش لازقه ف ال countainer
-                      contentPadding: EdgeInsets.only(right: 10),
-                      labelText: 'كلمه المرور ' ,
-                      counterStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      labelStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
                       ),
                     ),
-                    onChanged: (String value){},
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide:BorderSide(
+                          color: Colors.black26,
+                          width: 1.0
+                      ),
+                    ),
+                    //دا علشان الكلمه متبقاش لازقه ف ال countainer
+                    contentPadding: EdgeInsets.only(right: 10),
+                    labelText: 'كلمه المرور ' ,
+                    counterStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                    labelStyle: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-
+                  onChanged: (String value){},
                 ),
                 SizedBox(
                   height: 25.0,
