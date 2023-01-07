@@ -120,29 +120,24 @@ class _MetroTicketCalculationState extends State<MetroTicketCalculation> {
                     SizedBox(
                       width: 80.0,
                     ),
-                    Container(
-                      width: 50.0,
-                      height: 30.0,
-                      child: FloatingActionButton.extended(
-                        label: Text('' ,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ), // <-- Text
-                        backgroundColor: Colors.blue,
-                        icon:Padding(
-                          padding: const EdgeInsets.only(right: 10.0),
-                          child: Icon(
-                              Icons.add ,
-                            size: 35.0,
-                          ),
+                    ElevatedButton.icon(
+                      onPressed: (){
+                        setState(() {
+                          i++ ;
+                        });
+                      },
+                      icon: Icon(Icons.add,
+                      size: 35.0,
+                      ) ,
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.only(right: 5.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(17.0),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            i++ ;
-                          });
-                        },
+                      ),
+                      label: Text(
+                        textAlign: TextAlign.center,
+                        '',
                       ),
                     ),
                     SizedBox(
@@ -168,8 +163,8 @@ class _MetroTicketCalculationState extends State<MetroTicketCalculation> {
                       width: 15.0,
                     ),
                     Container(
-                      width: 50.0,
-                      height: 30.0,
+                      width: 65.0,
+                      height: 40.0,
                       child: FloatingActionButton.extended(
                         label: Text('' ,
                           style: TextStyle(

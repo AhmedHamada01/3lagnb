@@ -25,7 +25,6 @@ class SplashScreen2 extends StatelessWidget {
           child:
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
-
               children: [
                 //HexColor('#4267B2'),
                 SvgPicture.asset('assets/logo - Copy.svg',
@@ -55,42 +54,57 @@ class SplashScreen2 extends StatelessWidget {
                 SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 40.0,
-                  child: FloatingActionButton.extended(
-                    label: Text('Facebook',),
-                    // <-- Text
-                    backgroundColor: HexColor('#4267B2'),
-                    icon: Icon( // <-- Icon
-                      Icons.facebook,
-                      size: 24.0,
+                ElevatedButton.icon(
+                    onPressed: (){},
+                  icon: SvgPicture.asset(
+                    'assets/Icons/facebook.svg',
+                    width: 28.0,
+                    height: 28.0,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: HexColor('#4267B2'),
+                    padding: EdgeInsets.only(left: 90.0,right: 90.0,top: 5.0,bottom: 5.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(17.0),
                     ),
-                    onPressed: () {},
+                  ),
+                  label: Text(
+                    'Facebook',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                    ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                ElevatedButton.icon(
+                  onPressed: (){},
+                  icon: SvgPicture.asset(
+                    'assets/Icons/google.svg',
+                    width: 28.0,
+                    height: 28.0,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    padding: EdgeInsets.only(left: 95.0,right: 95.0,top: 5.0,bottom: 5.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(17.0),
+                    ),
+                  ),
+                  label: Text(
+                    'Google',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
                 SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 40.0,
-                  child: FloatingActionButton.extended(
-                    label: Text('Google',
-                      style: TextStyle(
-                          color: Colors.black,
-                      ),),
-                    backgroundColor: Colors.white,
-                    icon: SvgPicture.asset(
-                      'assets/Icons/google.svg',
-                      width: 24.0,
-                      height: 24.0,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
                 Container(
                   width: double.infinity,

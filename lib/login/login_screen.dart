@@ -37,14 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left:35.0,right: 35.0,top: 130.0),
+            padding: const EdgeInsets.only(left:35.0,right: 35.0,top: 120.0),
             child:
                Form(
                  key:Formkey ,
                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.start,
-
                   children: [
                     SvgPicture.asset('assets/logo - Copy.svg',
                       color: Colors.white,
@@ -194,22 +193,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 10.0,
                     ),
-                    InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword1()));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 25.0,top: 10.0),
-                        child: Text(
-                          'نسيت كلمه المرور؟',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white,
-                          ),
-
+                    TextButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword1()));
+                    }, child:
+                    Padding(
+                      padding: const EdgeInsets.only(left: 90.0),
+                      child: Text(
+                        'نسيت كلمه المرور ؟',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
+                    )
                     ),
                     SizedBox(
                       height: 5.0,

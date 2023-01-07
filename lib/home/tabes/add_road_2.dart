@@ -203,32 +203,43 @@ class AddRoad2 extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 130.0,
-                      height: 50.0,
-                      child: FloatingActionButton.extended(
-                        label: Text('توصف الطريق' ,
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ), // <-- Text
-                        backgroundColor: Colors.white,
-
-                        onPressed: () {},
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        padding: EdgeInsets.only(left: 25.0,right: 25.0,top: 10.0,bottom: 10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
                       ),
+                      child:Text(
+                        'توصف الطريق',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ) ,
                     ),
                     SizedBox(
                       width: 35.0,
                     ),
-                    Container(
-                      width: 130.0,
-                      height: 50.0,
-                      child: FloatingActionButton.extended(
-                        label: Text('هتملى الفورم'), // <-- Text
-                        backgroundColor: Colors.blue,
-                        onPressed: () {},
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blue,
+                        padding: EdgeInsets.only(left: 30.0,right: 30.0,top: 10.0,bottom: 10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
                       ),
+                      child:Text(
+                        'هتملى فورم',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ) ,
                     ),
                   ],
                 ),

@@ -298,38 +298,44 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 130.0,
-                      height: 50.0,
-                      child: FloatingActionButton.extended(
-                        label: Text('حفظ' ,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ), // <-- Text
-                        backgroundColor: Colors.blue,
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
+                    ElevatedButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.only(left: 50.0,right: 50.0,top: 10.0,bottom: 10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
                       ),
+                      child:Text(
+                        'حفظ',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ) ,
                     ),
                     SizedBox(
-                      width: 35.0,
+                      width: 20.0,
                     ),
-                    Container(
-                      width: 130.0,
-                      height: 50.0,
-                      child: FloatingActionButton.extended(
-                        label: Text(
-                          'حذف حسابك',
-                          style: TextStyle(
-                            color: Colors.red
-                          ),
-                        ), // <-- Text
-                        backgroundColor: Colors.white,
-                        onPressed: () {},
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        padding: EdgeInsets.only(left: 30.0,right: 30.0,top: 10.0,bottom: 10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
                       ),
+                      child:Text(
+                        'حذف حسابك',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ) ,
                     ),
                   ],
                 ),

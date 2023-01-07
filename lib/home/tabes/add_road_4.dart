@@ -203,32 +203,43 @@ class AddRoad4 extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
-                          width: 130.0,
-                          height: 50.0,
-                          child: FloatingActionButton.extended(
-                            label: Text('توصف الطريق' ,
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ), // <-- Text
-                            backgroundColor: Colors.white,
-
-                            onPressed: () {},
+                        ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white,
+                            padding: EdgeInsets.only(left: 25.0,right: 25.0,top: 10.0,bottom: 10.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
                           ),
+                          child:Text(
+                            'توصف الطريق',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ) ,
                         ),
                         SizedBox(
                           width: 35.0,
                         ),
-                        Container(
-                          width: 130.0,
-                          height: 50.0,
-                          child: FloatingActionButton.extended(
-                            label: Text('هتملى الفورم'), // <-- Text
-                            backgroundColor: Colors.blue,
-                            onPressed: () {},
+                        ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            padding: EdgeInsets.only(left: 30.0,right: 30.0,top: 10.0,bottom: 10.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
                           ),
+                          child:Text(
+                            'هتملى فورم',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ) ,
                         ),
                       ],
                     ),
@@ -330,77 +341,70 @@ class AddRoad4 extends StatelessWidget {
                     SizedBox(
                       height: 25.0,
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 80.0,
-                          height: 50.0,
-                          child: FloatingActionButton.extended(
-                            label: Text('حفظ' ,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ), // <-- Text
-                            backgroundColor: Colors.blue,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 80.0,
+                            height: 50.0,
+                            child: FloatingActionButton.extended(
+                              label: Text('حفظ' ,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ), // <-- Text
+                              backgroundColor: Colors.blue,
 
-                            onPressed: () {
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        Container(
-                          width: 100.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black26,
-                              width: 1.0,
+                              onPressed: () {
+                              },
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white,
                           ),
-                          child: FloatingActionButton.extended(
-                            label: Text('اضف خطوه' ,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          ElevatedButton(
+                            onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0,bottom: 10.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25.0),
                               ),
                             ),
-                            backgroundColor: Colors.white,// <-- Text
-                            onPressed: () {
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        Container(
-                          width: 120.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black26,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.white,
-                          ),
-                          child: FloatingActionButton.extended(
-                            label: Text('اضف طريق اخر ' ,
+                            child:Text(
+                              'اضف خطوه',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ) ,
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          ElevatedButton(
+                            onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 10.0,bottom: 10.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25.0),
                               ),
                             ),
-                            backgroundColor: Colors.white,// <-- Text
-                            onPressed: () {
-                            },
+                            child:Text(
+                              'اضف طريق اخر',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ) ,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 25.0,
