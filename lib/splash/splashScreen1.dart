@@ -21,7 +21,7 @@ class SplashScreen1 extends StatelessWidget {
               Image.asset(
                 'assets/mainsquare.png',
                 width:double.infinity ,
-                height: 730,
+                height: 732,
                 fit: BoxFit.cover,
               ),
             ]

@@ -72,6 +72,7 @@ class Forgetpassword2 extends StatelessWidget {
                   padding:
                   const EdgeInsets.only(left: 20.0, right: 20.0,),
                   child: TextFormField(
+                      obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       labelStyle: TextStyle(),
@@ -95,6 +96,7 @@ class Forgetpassword2 extends StatelessWidget {
                   padding:
                   const EdgeInsets.only(left: 20.0, right: 20.0,),
                   child: TextFormField(
+                    obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       labelStyle: TextStyle(),
